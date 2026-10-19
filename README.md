@@ -4,24 +4,28 @@
 
 Created in [T3 Code](https://t3.codes).
 
-Skill global [OpenCode](https://opencode.ai) pour créer des diagrammes vérifiés avec [Pele](https://pele.run) — rendu Mermaid → SVG → PNG headless, avec boucle de correction sur les erreurs de parsing.
+A global [OpenCode](https://opencode.ai) skill for creating verified diagrams with [Pele](https://pele.run) — headless Mermaid → SVG → PNG rendering, with a correction loop on parse errors.
 
-## Contenu
+## Contents
 
 ```
 skill/pele/
-├── SKILL.md            # workflow, types supportés, pièges de compatibilité, palettes
+├── SKILL.md            # workflow, supported types, compatibility gotchas, palettes
 └── scripts/
-    ├── render.mjs      # source Mermaid → SVG (JSON, erreurs ligne/colonne)
+    ├── render.mjs      # Mermaid source → SVG (JSON, line/column errors)
     └── to-png.mjs      # SVG → PNG (sharp)
 ```
 
-## Installation (globale, par lien symbolique)
+## Installation (global, via symlink)
 
 ```bash
 ln -sfn "$(pwd)/skill/pele" ~/.config/opencode/skills/pele
 ```
 
-Le dossier `~/.config/opencode/skills` est découvert automatiquement par OpenCode : le skill `pele` devient disponible dans **toutes les sessions**, et toute édition ici est immédiatement active (aucune copie).
+OpenCode automatically discovers `~/.config/opencode/skills`: the `pele` skill becomes available in **every session**, and any edit made here takes effect immediately (no copying).
 
-Après avoir déplacé ou cloné ce dépôt ailleurs, relancer la commande depuis le nouvel emplacement.
+After moving or cloning this repository elsewhere, run the command again from the new location.
+
+## License
+
+[MIT](LICENSE)
